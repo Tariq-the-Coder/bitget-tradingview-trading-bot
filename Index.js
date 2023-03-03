@@ -32,18 +32,9 @@ async function setLeverage(symbol, marginCoin, leverage) {
     }
 }
 
-async function submitTrailingStopOrder(order) {
-    try {
-        const response = await futuresClient.postPrivate('/api/mix/v1/plan/placeTrailStop', order);
-        console.log(response);
-    } catch (error) {
-        console.error(error);
-    }
-}
 
 async function myFunction(order, res) {
     await setLeverage(order.symbol, order.marginCoin, order.leverage);
-    await submitTrailingStopOrder(order);
     futuresClient.submitOrder(order)
         .then(result => {
             console.log("postNewFuturesOrder result: ", result);
