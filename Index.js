@@ -66,10 +66,6 @@ app.post('/api/v1/placeorder', (req, res) => {
     const presetTakeProfitPrice = req.body.presetTakeProfitPrice;
     const presetStopLossPrice = req.body.presetStopLossPrice;
     const leverage = req.body.leverage;
-    const planType = req.body.planType;
-    const rangeRate = req.body.rangeRate;
-    const triggerPrice = req.body.triggerPrice;
-    const triggerType = "fill_price";
  
 
     // const symbol = 'SBTCSUSDT_SUMCBL';
@@ -95,10 +91,7 @@ app.post('/api/v1/placeorder', (req, res) => {
         presetTakeProfitPrice,
         presetStopLossPrice,
         leverage,
-        planType,
-        rangeRate,
-        triggerPrice,
-        triggerType,
+    
     };
     myFunction(order, res)
 
