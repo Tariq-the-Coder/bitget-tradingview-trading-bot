@@ -84,51 +84,13 @@ app.post('/api/v1/placeorder', (req, res) => {
         leverage,
     
     };
-    myFunction(order, res)
-
-});
-
-app.post('/api/v1/placeorder2', (req, res) => {
-    const symbol = req.body.symbol;
-    const marginCoin = req.body.marginCoin;
-    const orderType = req.body.orderType;
-    const side = req.body.side;
-    const price = req.body.price;
-//     const amount = req.body.amount;
-    const size = req.body.size;
-    const presetTakeProfitPrice = req.body.presetTakeProfitPrice;
-    const presetStopLossPrice = req.body.presetStopLossPrice;
-    const leverage = req.body.leverage;
- 
-
-    // const symbol = 'SBTCSUSDT_SUMCBL';
-    // const marginCoin = 'SUSDT';
-    // const orderType = 'limit';
-    // const side = 'open_long';
-    // const price = '21726';
-    // const size = '0.1';
-    // const presetTakeProfitPrice = '23000';
-    // const presetStopLossPrice = '13000';
-    // const leverage = '3';
-    // const planType = "moving_plan";
-    // const rangeRate = "10";
-    // const triggerPrice = "22857";
-
-    const order = {
-        symbol,
-        marginCoin,
-        orderType,
-        side,
-        price,
-        size,
-        presetTakeProfitPrice,
-        presetStopLossPrice,
-        leverage,
     
-    };
-    myFunction(order, res)
+   setTimeout(function() {
+  myFunction(order, res);
+}, 1000);
 
 });
+
 
 
 app.get('/', (req, res) => {
